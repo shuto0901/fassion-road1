@@ -1,0 +1,35 @@
+<h2 class="title">Company</h2>
+
+<% if company_signed_in? %>
+<div class="col-xs-6">
+    <%= attachment_image_tag @company, :company_image, size: '300x150', fallback: "no_image.png", size: "300x150" %>
+    <p class="company_txt"><%= @company.company_name %></p>
+    <p class="company_txt"><%= @company.description %></p>
+    <%= link_to 'DM一覧へ', rooms_path, class: "btn btn-primary" %>
+    <%= link_to '編集する', edit_company_path, class: "btn btn-success" %>
+</div>
+
+<div class="col-xs-6">
+    <h3 class="title2">いいねした作品一覧</h3>
+    <div class="company_block">
+    <% @favorites.each do |favorite| %>
+    <% post = Post.find_by(id: favorite.post_id) %>
+    <div class="company_box">
+    <%= link_to personal_post_path do %>
+    <%= attachment_image_tag post, :post_image, size: '100x70', fallback: "no_image.png", size: "100x70" %>
+    <% end %>
+    <p class="company_tit"><%= post.title %></p>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+<% else user_signed_in? %>
+
+<div class="col-xs-6">
+    <%= attachment_image_tag @company, :company_image, size: '100x100', fallback: "no_image.png", size: "180x100" %>
+    <p><%= @company.company_name %></p>
+    <p><%= @company.description %></p>
+</div>
+
+<% end %>

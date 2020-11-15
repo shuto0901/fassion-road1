@@ -1,0 +1,55 @@
+<h2 class="title">Chatroom</h2>
+<% if user_signed_in? %>
+  <h3><%= @company.company_name %>とのチャットルーム</h3>
+  <div class="chat-field">
+    <% @messages.each do |m| %>
+      <!-- メッセージがUserによるものだったら -->
+      <% if m.is_user %>
+        <!-- メッセージを右に寄せる -->
+        <div class="message message_right">
+          <span class="message_txt">
+            <%= m.content %>
+            </span>
+        </div>
+      <!-- メッセージがShopによるものだったら -->
+      <% else %>
+        <!-- メッセージを左に寄せる -->
+        <div class="message message_left">
+          <span class="message_txt">
+            <%= m.content %>
+            </span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <% elsif company_signed_in?%>
+  <h3><%= @user.name %>とのチャットルーム</h3>
+  <div class="chat-field">
+    <% @messages.each do |m| %>
+      <!-- メッセージがUserによるものだったら -->
+      <% if m.is_user %>
+        <!-- メッセージを左に寄せる -->
+        <div class="message message_left">
+          <span class="message_txt">
+            <%= m.content %>
+            </span>
+        </div>
+      <!-- メッセージがShopによるものだったら -->
+      <% else %>
+        <!-- メッセージを右に寄せる -->
+        <div class="message message_right">
+          <span class="message_txt">
+            <%= m.content %>
+            </span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_for [@room, @message] do |f| %>
+  <%= f.text_field :content, class: "message_form", placeholder: "メッセージを送信" %>
+  <%= f.submit "送信", class: "message_submit" %>
+<% end %>
+
+<%= link_to 'DM一覧に戻る', rooms_path, class: "btn btn-primary pull-right message_btn" %>

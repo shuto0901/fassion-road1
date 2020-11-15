@@ -1,0 +1,37 @@
+<h2 class="title">Profile</h2>
+
+<% if user_signed_in? %>
+<div class="row">
+<div class="col-xs-6">
+ <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.png", size: "180x100" %>
+</div>
+<div class="col-xs-6">
+  <div class="form-group display-flex">
+    <label class="labels">名前</label>
+     <p class="text"><%= @user.name %></p>
+  </div>
+  <div class="form-group display-flex">
+    <label class="labels">自己紹介</label>
+    <p class="text"><%= @user.description %></p>
+  </div>
+  
+  <%= link_to 'DM一覧へ', rooms_path(current_user.id), class: "btn btn-primary" %>
+  <%= link_to '編集する', edit_personal_user_path, class: "btn btn-success" %>
+</div>
+</div>
+
+<% else company_signed_in? %>
+
+<div class="col-xs-6">
+ <%= attachment_image_tag @user, :profile_image, size: '100x100', fallback: "no_image.png", size: "180x100" %>
+</div>
+<div class="col-xs-6">
+  <div class="form-group display-flex">
+    <label>名前</label>
+     <%= @user.name %>
+  </div>
+  <div class="form-group display-flex">
+    <label>自己紹介</label>
+    <%= @user.description %>
+  </div>
+<% end %>

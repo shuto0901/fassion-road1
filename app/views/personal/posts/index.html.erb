@@ -1,0 +1,20 @@
+<h2 class="title">Posts</h2>
+
+<div class="post_index_block">
+      <% @posts.each do |post| %>
+      <div class="post_index_box">
+      <p>
+            <%= link_to personal_post_path(post.id) do %>
+            <%= attachment_image_tag post, :post_image, size: '180x100', fallback: "no_image.png", size: "180x100" %>
+            <% end %>
+      </p>
+      <p><%= post.title %></p>
+      </div>
+      <% end %>
+</div>
+
+
+
+<% if user_signed_in? %>
+<%= link_to '新規投稿へ', new_personal_post_path, class: "btn btn-primary pull-right" %>
+<% end %>

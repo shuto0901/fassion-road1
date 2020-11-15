@@ -1,0 +1,57 @@
+<h2 class="navbar-left header_logo">
+    <% if user_signed_in? %>
+    <%= link_to image_tag("logo.png"), personal_posts_path, class: "" %>
+    <% elsif company_signed_in? %>
+    <%= link_to image_tag("logo.png"), company_path(current_company.id), class: "logo_txt" %>
+    <% else %>
+    <%= image_tag("logo.png") %>
+    <% end %>
+  </h2>
+
+  <nav>
+    <ul class="nav nav-pills pull-right header_list">
+      <% if user_signed_in? %>
+       <!--メンバーログイン-->
+        <li class="header_item">
+          <%= link_to " my page", personal_user_path(current_user), class: "header_btn" %>
+        </li>
+        <li class="header_item">
+          <%= link_to " 投稿一覧", personal_posts_path, class: "header_btn" %>
+        </li>
+        <li class="header_item">
+          <%= link_to " contact", contacts_path, class: "header_btn" %>
+        </li>
+        <li class="header_item">
+          <%= link_to " log out", destroy_user_session_path, method: :delete, class: "header_btn" %>
+        </li>
+      <% elsif company_signed_in? %>
+      <!--会社ログイン-->
+        <li class="header_item">
+          <%= link_to " company_page", company_path(current_company), class: "header_btn" %>
+        </li>
+        <li class="header_item">
+          <%= link_to " 投稿一覧", personal_posts_path, class: "header_btn" %>
+        </li>
+        <li class="header_item">
+          <%= link_to " contact", contacts_path, class: "header_btn" %>
+        </li>
+        <li class="header_item">
+          <%= link_to " log out", destroy_company_session_path, method: :delete, class: "header_btn" %>
+        </li>
+      <% else %>
+      <!--ログインしていない-->
+        <li class="header_item">
+          <%= link_to " about", personal_homes_about_path, class: "header_btn" %>
+        </li>
+        <li class="header_item">
+          <%= link_to " contact", contacts_path, class: "header_btn" %>
+        </li>
+        <li class="header_item">
+          <%= link_to " sign up", new_user_registration_path, class: "header_btn" %>
+        </li>
+        <li class="header_item">
+          <%= link_to " log in", new_user_session_path, class: "header_btn" %>
+        </li>
+      <% end %>
+    </ul>
+  </nav>

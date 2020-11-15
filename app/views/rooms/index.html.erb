@@ -1,0 +1,41 @@
+<h2 class="title">Message</h2>
+
+<% if user_signed_in? %>
+ <table class="table">
+   <tbody>
+     <% @companys.each do |company| %>
+     <tr>
+      <th><%= company.company_name %></th>
+      <% if @company_ids.include?(company.id) %>
+      <td><%= link_to "DMを送る", room_path(current_user.rooms.find_by(company_id: company.id)), class: "btn btn-primary pull-right" %></td>
+      <% else %>
+       <%= form_for Room.new do |f| %>
+       <%= f.hidden_field :company_id, :value => company.id %>
+       <td><%= f.submit 'DMを送る', class: "btn btn-dark pull-right" %></td>
+       <% end %>
+      <% end %>
+      </tr>
+     <% end %>
+  </tbody>
+  </table>
+<!--companyでログインしてたら-->
+<% else company_signed_in? %>
+<table class="table">
+  <tbody>
+  <% @users.each do |user| %>
+  <tr>
+    <th><%= user.name %></th>
+    <% if @user_ids.include?(user.id) %>
+      <td><%= link_to "DMを送る", room_path(current_company.rooms.find_by(user_id: user.id)), class: "btn btn-primary pull-right" %></td>
+    <% else %>
+      <%= form_for Room.new do |f| %>
+        <%= f.hidden_field :user_id, :value => user.id %>
+        <td><%= f.submit 'DMを送る', class: "btn btn-dark pull-right" %></td>
+      <% end %>
+    <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+<% end %>
+

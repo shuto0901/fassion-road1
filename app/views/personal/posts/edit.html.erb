@@ -1,0 +1,21 @@
+<h2 class="title">Post Edit</h2>
+<%= form_with model: @post, url: personal_post_path, local: true do |f| %>
+
+<div class="col-xs-6 display-center">
+  <%= f.file_field :post_image %>
+</div>
+
+<div class="col-xs-6">
+   <div class="form-group display-flex">
+     <%= f.label :title, 'タイトル', class: "labels" %>
+     <p class="text"><%= f.text_field :title %></p>
+    </div>
+    <div class="form-group display-flex">
+      <%= f.label :description, '説明', class: "labels" %>
+      <p class="text"><%= f.text_area :description %></p>
+    </div>
+</div>
+<div class="actions text-right">
+    <%= f.submit '変更を保存', class: 'btn btn-primary' %>
+    </div>
+<% end %>
