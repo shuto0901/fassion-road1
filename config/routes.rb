@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
- 
+  
   get 'rooms/show'
-  root 'rooms#index'
+  get 'rooms/index'
+  
   devise_for :companys, controller: {
     sessions: "companys/sessions",
     passwords: "companys/passwords",
@@ -19,6 +20,10 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
+  
+  scope module: :personal do
+    root 'homes#top'
+  end
   
   namespace :personal do
     
