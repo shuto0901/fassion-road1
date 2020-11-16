@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
  
   get 'rooms/show'
-  root 'rooms/index'
+  root 'rooms#index'
   devise_for :companys, controller: {
     sessions: "companys/sessions",
     passwords: "companys/passwords",
