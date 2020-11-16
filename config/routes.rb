@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  root 'homes#top'
+  
   get 'rooms/show'
   get 'rooms/index'
   
@@ -21,12 +23,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   
-  scope module: :personal do
-    root 'homes#top'
-  end
   
   namespace :personal do
-    
     get 'homes/about'
     resources :posts do
       resource :favorites, only: [:create, :destroy]
