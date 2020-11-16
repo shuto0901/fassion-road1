@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  
+ 
   get 'rooms/show'
-  get 'rooms/index'
+  root 'rooms/index'
   devise_for :companys, controller: {
     sessions: "companys/sessions",
     passwords: "companys/passwords",
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   }
   
   namespace :personal do
-    root 'homes#top'
+    
     get 'homes/about'
     resources :posts do
       resource :favorites, only: [:create, :destroy]
