@@ -57,6 +57,7 @@ gem 'rspec-rails'
 gem 'pry-byebug', group: :development
 gem 'dotenv-rails'
 gem 'font-awesome-rails'
+
 group :production do
   gem 'mysql2'
 end
