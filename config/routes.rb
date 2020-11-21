@@ -25,12 +25,14 @@ Rails.application.routes.draw do
   
   
   namespace :personal do
-    resources :posts do
-      resource :favorites, only: [:create, :destroy]
-    end
     resources :users, only:[:show, :edit, :update]
   end
 
+
+  resources :posts do
+      resource :favorites, only: [:create, :destroy]
+  end
+    
   get 'contacts' => 'contacts#index'
   post 'contacts/confirm' => 'contacts#confirm'
   post 'contacts/thanks' => 'contacts#thanks'

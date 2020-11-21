@@ -22,6 +22,7 @@
  padding: 0;
  margin: 0;
  box-sizing: border-box;
+ list-style: none;
 }
 
 .title {
@@ -77,9 +78,6 @@
       width: 20%;
       margin: 10px 15px;
     }
-  }
-  &_favorite {
-    list-style: none;
   }
 }
 

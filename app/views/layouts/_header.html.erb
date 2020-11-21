@@ -1,6 +1,6 @@
 <h2 class="navbar-left header_logo">
     <% if user_signed_in? %>
-    <%= link_to image_tag("logo.png"), personal_posts_path, class: "" %>
+    <%= link_to image_tag("logo.png"), posts_path, class: "" %>
     <% elsif company_signed_in? %>
     <%= link_to image_tag("logo.png"), company_path(current_company.id), class: "logo_txt" %>
     <% else %>
@@ -16,7 +16,7 @@
           <%= link_to " my page", personal_user_path(current_user), class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " 投稿一覧", personal_posts_path, class: "header_btn" %>
+          <%= link_to " 投稿一覧", posts_path, class: "header_btn" %>
         </li>
         <li class="header_item">
           <%= link_to " contact", contacts_path, class: "header_btn" %>
@@ -30,7 +30,7 @@
           <%= link_to " company_page", company_path(current_company), class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " 投稿一覧", personal_posts_path, class: "header_btn" %>
+          <%= link_to " 投稿一覧", posts_path, class: "header_btn" %>
         </li>
         <li class="header_item">
           <%= link_to " contact", contacts_path, class: "header_btn" %>
