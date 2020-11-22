@@ -1,6 +1,6 @@
 class ContactMailer < ApplicationMailer
     default from: "example@example.com"
-    default to: ENV['KEY']
+    default to: ENV['KEY'] 
     
     def received_email(contact)
     @contact = contact
