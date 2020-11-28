@@ -1,7 +1,18 @@
-<div>
+<div class="top">
     
-<h1>デザイナーのデザイナーによるデザイナーのためのサイト</h1>
+<h1 class="top_tit">FassionRoad</h1>
 
-<%= link_to '会員ログイン', new_user_session_path, class: "btn btn-primary" %>
-<%= link_to 'カンパニーログイン', new_company_session_path, class: "btn btn-primary" %>
+<div class="top_block">
+    <div class="slider">
+        <%= image_tag 'top1.jpeg' %>
+        <%= image_tag 'top2.jpeg' %>
+        <%= image_tag 'top3.jpeg' %>
+        <%= image_tag 'top4.jpeg' %>
+    </div>
+</div>
+
+<div class="top_wrap">
+<%= link_to 'User Log in', new_user_session_path, class: "btn top_btn" %>
+<%= link_to 'Company Log in', new_company_session_path, class: "btn top_btn" %>
+</div>
 </div>

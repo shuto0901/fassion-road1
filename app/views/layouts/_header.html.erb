@@ -1,10 +1,10 @@
 <h2 class="navbar-left header_logo">
     <% if user_signed_in? %>
-    <%= link_to image_tag("logo.png"), posts_path, class: "" %>
+    <%= link_to image_tag("logo.png", :size => "100x60"), posts_path, class: "" %>
     <% elsif company_signed_in? %>
-    <%= link_to image_tag("logo.png"), company_path(current_company.id), class: "logo_txt" %>
+    <%= link_to image_tag("logo.png", :size => "100x60"),company_path(current_company.id), class: "logo_txt" %>
     <% else %>
-    <%= image_tag("logo.png") %>
+    <%= link_to image_tag("logo.png", :size => "100x60"), root_path %>
     <% end %>
   </h2>
 
@@ -13,44 +13,44 @@
       <% if user_signed_in? %>
        <!--メンバーログイン-->
         <li class="header_item">
-          <%= link_to " my page", personal_user_path(current_user), class: "header_btn" %>
+          <%= link_to " My Page", personal_user_path(current_user), class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " 投稿一覧", posts_path, class: "header_btn" %>
+          <%= link_to " Post", posts_path, class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " contact", contacts_path, class: "header_btn" %>
+          <%= link_to " Contact", contacts_path, class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " log out", destroy_user_session_path, method: :delete, class: "header_btn" %>
+          <%= link_to " Log out", destroy_user_session_path, method: :delete, class: "header_btn" %>
         </li>
       <% elsif company_signed_in? %>
       <!--会社ログイン-->
         <li class="header_item">
-          <%= link_to " company_page", company_path(current_company), class: "header_btn" %>
+          <%= link_to " Company", company_path(current_company), class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " 投稿一覧", posts_path, class: "header_btn" %>
+          <%= link_to " Post", posts_path, class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " contact", contacts_path, class: "header_btn" %>
+          <%= link_to " Contact", contacts_path, class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " log out", destroy_company_session_path, method: :delete, class: "header_btn" %>
+          <%= link_to " Log out", destroy_company_session_path, method: :delete, class: "header_btn" %>
         </li>
       <% else %>
       <!--ログインしていない-->
         <li class="header_item">
-          <%= link_to " about", homes_about_path, class: "header_btn" %>
+          <%= link_to " About", homes_about_path, class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " contact", contacts_path, class: "header_btn" %>
+          <%= link_to " Contact", contacts_path, class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " sign up", new_user_registration_path, class: "header_btn" %>
+          <%= link_to " Sign up", new_user_registration_path, class: "header_btn" %>
         </li>
         <li class="header_item">
-          <%= link_to " log in", new_user_session_path, class: "header_btn" %>
+          <%= link_to " Log in", new_user_session_path, class: "header_btn" %>
         </li>
       <% end %>
     </ul>

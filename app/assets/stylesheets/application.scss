@@ -16,6 +16,8 @@
 
 @import "bootstrap";
 @import "font-awesome";
+@import "slick-theme";
+@import "slick";
 
 // 共通
 * {
@@ -25,9 +27,14 @@
  list-style: none;
 }
 
+.main {
+  margin-top: 50px;
+}
+
 .title {
   font-size: 50px;
   margin-bottom: 30px;
+  text-align: center;
   font-family: 'Comic Sans MS';
 }
 
@@ -37,47 +44,153 @@
 }
 
 .labels {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .text {
-  font-size: 25px;
+  font-size: 2vw;
+}
+
+.background_silver {
+  background: #F5F5F5;
+  margin: 0;
 }
 
 // ヘッダー
 .header {
-  height: 80px;
-  background-image: image-url("header_bg.jpg");
+  height: 100px;
   background-size: cover;
   background-position: top 45% right 10%;
+  box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.3);
   &_logo {
-    margin-left: 20px;
+    margin-left: 50px;
+    margin-bottom: 15px;
   }
   &_list {
     margin-right: 20px;
   }
   &_item {
-    background-color: #383838;
     margin-top: 7%;
   }
   &_btn {
-    color: #fff;
+    color: #383838;
   }
 }
+
+// TOPページ
+.top {
+  position: relative;
+  &_block {
+    margin-top: 10vw;
+  }
+  &_tit {
+    position: absolute;
+    z-index: 99;
+    top: -12%;
+    left: 22%;
+    font-size: 8vw;
+    font-weight: bold;
+  }
+  &_wrap {
+    position: absolute;
+    bottom: 5%;
+    left: 18%;
+  }
+  &_btn {
+    color: #fff;
+    background: #000000;
+    border: #fff;
+    padding: 20px 70px;
+    font-size: 25px;
+    margin: 0 3.2vw;
+    font-weight: bold;
+  }
+}
+
+// Aboutページ
+.about {
+  &_tit {
+    text-align: center;
+  }
+  &_txt {
+    font-size: 2.8vw;
+    margin-bottom: 2vw;
+  }
+  &_txt1 {
+    color: #EE0000;
+    font-weight: bold;
+  }
+  &_txt2 {
+    font-size: 3vw;
+    margin-top: 2vw;
+    margin-bottom: 3vw;
+    text-align: center;
+  }
+  &_box {
+    text-align: center;
+  }
+  &_img {
+    width: 80%;
+    text-align: center;
+  }
+}
+
 
 // postコントローラー
 .post {
   &_index {
     &_block {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-around;
       flex-wrap: wrap;
       width: 100%;
     }
+    &_block1 {
+      margin-bottom: 3vw;
+    }
     &_box {
       width: 20%;
-      margin: 10px 15px;
+      margin: 25px 15px;
+      border: solid 1px #383838;
     }
+    &_img {
+      width: 100%;
+      height: 10vw;
+    }
+    &_txt {
+      font-size: 2vw;
+    }
+  }
+  &_wrap {
+    padding: 0;
+    margin: 30px 50px;
+    background: #fff;
+    border: solid 1px #BBBBBB;
+  }
+  &_wrap1 {
+    border-bottom: solid 1px #BBBBBB;
+  }
+  &_outer {
+   padding: 1vw 2vw;
+  }
+  &_img {
+    width: 100%;
+    height: 36vw;
+  }
+  &_btn {
+    width: 100%;
+    padding: 10px 30px;
+    border: solid 1px #337ab7;
+    font-size: 20px;
+  }
+}
+
+.user{
+  &_block {
+    margin: 0;
+  }
+  &_box {
+    margin-bottom: 3vw;
   }
 }
 
@@ -114,7 +227,6 @@
   }
 }
 
-
 // company
 .company {
   &_block {
@@ -124,6 +236,7 @@
   }
   &_box {
     margin-right: 15px;
+    margin-bottom: 20px;
   }
   &_tit {
     margin-top: 10px;
@@ -131,5 +244,38 @@
   &_txt {
     font-size: 23px;
     margin-top: 15px;
+  }
+}
+
+.contact {
+  &_box {
+    margin-bottom: 2vw;
+  }
+  &_btn {
+    width: 25%;
+    font-size: 1.2vw;
+  }
+}
+
+.favorite {
+  &_item {
+    padding: 15px 25px;
+  }
+  &_btn {
+    font-size: 2vw;
+  }
+}
+
+.footer {
+  background: #111111;
+  &_block {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &_txt {
+    color: #fff;
+    font-size: 2vw;
   }
 }

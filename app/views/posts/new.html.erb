@@ -1,6 +1,6 @@
 <h2 class="title">New Post</h2>
 
-<%= form_with model: @post, url: personal_posts_path, local: true do |f| %>
+<%= form_with model: @post, url: posts_path, local: true do |f| %>
   <div class="col-xs-6">
     <%= f.attachment_field :post_image %>
   </div>

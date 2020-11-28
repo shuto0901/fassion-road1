@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   
   def after_sign_up_path_for(resource_or_scope)
     if resource_or_scope =- current_user
-       stored_location_for(resource_or_scope) || personal_posts_path
+       stored_location_for(resource_or_scope) || posts_path
     elsif resource_or_scope == current_company
        stored_location_for(resource_or_scope) || company_path(current_company.id)
     end
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   
   def after_sign_in_path_for(resource_or_scope)
     if resource_or_scope == current_user
-      stored_location_for(resource_or_scope) || personal_posts_path
+      stored_location_for(resource_or_scope) || posts_path
     elsif resource_or_scope == current_company
       stored_location_for(resource_or_scope) || company_path(current_company.id)
     end

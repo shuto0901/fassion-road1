@@ -1,26 +1,31 @@
 <h2 class="title">Post Details</h2>
 
-<div class="row">
-<div class="col-xs-6">
- <%= attachment_image_tag @post, :post_image, size: '100x100', fallback: "no_image.png", size: "180x100" %>
-</div>
-<div class="col-xs-6">
-  <div class="form-group display-flex">
-    <label class="labels">タイトル</label>
-     <p class="text"><%= @post.title %></p>
+<div class="row background_silver">
+  
+<div class="col-xs-5 post_wrap">
+ <%= attachment_image_tag @post, :post_image, size: '100x100', fallback: "no_image.png", size: "180x100", class: "post_img" %>
+ <div id="favorites_buttons_<%= @post.id %>">
+    <%= render partial: 'favorites/favorite', locals: { post: @post} %>
   </div>
-  <div class="form-group display-flex">
-    <label class="labels">説明</label>
+</div>
+<div class="col-xs-5 post_wrap">
+  <div class="post_outer">
+  <div class="form-group display-flex post_wrap1">
+     <p class="text"><%= @post.title %></p>
+     <p class="text1">デザイナー：<%= @post.user.name %></p>
+    </div>
+  <div class="form-group display-flex post-wrap2">
     <p class="text"><%= @post.description %></p>
   </div>
   
-  <div id="favorites_buttons_<%= @post.id %>">
-    <%= render partial: 'favorites/favorite', locals: { post: @post} %>
+  <% if user_signed_in? %>
+  <div class="text-right">
+  <%= link_to '編集する', edit_post_path(@post), class: "btn post_btn" %>
   </div>
-
+  <% end %>
+  </div>
 </div>
-</div>
 
-<div class="text-right">
-  <%= link_to '編集する', edit_post_path(@post), class: "btn btn-primary" %>
+
+
 </div>

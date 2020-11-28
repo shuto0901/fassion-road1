@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for @contact, :url => contacts_confirm_path do |f| %>
   <div>
     <h2 class="title">Contact</h2>
@@ -27,6 +28,8 @@
       <td class="text"><%= f.text_area :message %></td>
     </tr>
   </table>
-  <%= f.submit '確認画面へ', class: 'btn btn-primary pull-right' %>
+  <div class="text-center contact_box">
+  <%= f.submit '確認画面へ', class: 'btn btn-primary contact_btn' %>
+  </div>
 <% end %>
- 
+ </div>

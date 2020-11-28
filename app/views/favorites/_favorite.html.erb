@@ -1,19 +1,21 @@
 <% if company_signed_in? %>
   <% if post.favorited_by?(current_company) %>
-  <li>
-  <%= link_to post_favorites_path(post), method: :delete,remote: true do %>
+  <li class="favorite_item pull-right">
+  <%= link_to post_favorites_path(post), method: :delete,remote: true, class: "favorite_btn" do %>
     <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-     いいね<%= post.favorites.count %>件
+     いいね <%= post.favorites.count %> 件
   <% end %>
   </li>
   <% else %>
-  <li>
-  <%= link_to post_favorites_path(post), method: :post,remote: true do %>
+  <li class="favorite_item pull-right">
+  <%= link_to post_favorites_path(post), method: :post,remote: true, class: "favorite_btn" do %>
     <i class="fa fa-heart-o" aria-hidden="true"></i>
-     いいね<%= post.favorites.count %>件
+     いいね <%= post.favorites.count %> 件
   <% end %>
   </li>
 <% end %>
 <% elsif user_signed_in? %>
-<%= post.favorites.count %> いいね
+  <li class="favorite_item pull-right favorite_btn">
+    いいね <%= post.favorites.count %> 件
+  </li>
 <% end %>

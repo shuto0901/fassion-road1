@@ -1,20 +1,21 @@
 <h2 class="title">Posts</h2>
 
+<div>
 <div class="post_index_block">
       <% @posts.each do |post| %>
       <div class="post_index_box">
       <p>
             <%= link_to post_path(post.id) do %>
-            <%= attachment_image_tag post, :post_image, size: '180x100', fallback: "no_image.png", size: "180x100" %>
+            <%= attachment_image_tag post, :post_image, size: '180x100', fallback: "no_image.png", size: "180x100", class: "post_index_img" %>
             <% end %>
       </p>
-      <p><%= post.title %></p>
+      <p class="post_index_txt"><%= post.title %></p>
       </div>
       <% end %>
 </div>
-
-
-
-<% if user_signed_in? %>
-<%= link_to '新規投稿へ', new_post_path, class: "btn btn-primary pull-right" %>
-<% end %>
+  <div class="post_index_block1">
+      <% if user_signed_in? %>
+      <%= link_to '新規投稿へ', new_post_path, class: "btn btn-primary pull-right" %>
+      <% end %>
+      </div>
+</div>
