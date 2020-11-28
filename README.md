@@ -1,24 +1,32 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## アプリケーション名
+FassionRoad
+## サイト概要
+自分がデザインした服をアパレル会社で取り扱って欲しい人、
+自分のアパレルブランドを立ち上げたい人の
+夢を実現させるプラットフォーム
+企業側の、新しいデザインを取り入れたい、自社製品のバリエーションを増やしたいというニーズを満たすことができる。
+個人とアパレル会社でWIN-WINの関係を築くことを目的としている。
+### サイトテーマ
+ファッションデザイン共有
+### テーマを選んだ理由
+・自分がファッションに疎い。
+・好きなことに全力で取り組んでいる人の夢を応援したい。
+・自分を表現するプラットフォームが次々と誕生する中でファッションデザインをアピールする場がない。
+### ターゲットユーザ
+個人（デザインに興味があるひと、服飾大学生）
+法人（アパレル会社）
+### 主な利用シーン
+自分の服のデザインをアピールしたい時。新しいデザインを取り入れたい時・
+## 設計書
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1pbeIwpH03vokPWTacb8MC60Vbe7-0Y-a0mRZ9-lgjJE/edit#gid=0
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- 仮想環境：cloud9
+## 使用素材
+- 外部サービスの画像素材・音声素材を使用した場合は、必ずサービス名とURLを明記してください。
+- 使用しない場合は、使用素材の項目をREADMEから削除してください。
+- gem devise bootstrap refile kaminari
