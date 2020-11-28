@@ -70,7 +70,7 @@
     margin-right: 20px;
   }
   &_item {
-    margin-top: 7%;
+    margin-top: 30px;
   }
   &_btn {
     color: #383838;
@@ -96,6 +96,11 @@
     bottom: 5%;
     left: 18%;
   }
+  &_wrap1 {
+    position: absolute;
+    bottom: 1.6%;
+    left: 18%;
+  }
   &_btn {
     color: #fff;
     background: #000000;
@@ -104,6 +109,13 @@
     font-size: 25px;
     margin: 0 3.2vw;
     font-weight: bold;
+  }
+  &_btn1 {
+    color: #0080ff;
+    font-size: 1.5vw;
+    font-weight: bold;
+    margin: 0 7.2vw;
+    border-bottom: solid 1px #0080ff;
   }
 }
 
